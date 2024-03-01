@@ -27,8 +27,6 @@
 
 #include "lib_common.h"
 
-#include "libdeflate.h"
-
 #ifdef FREESTANDING
 #  define malloc NULL
 #  define free NULL
@@ -70,7 +68,7 @@ libdeflate_aligned_free(void *ptr)
 		libdeflate_free(((void **)ptr)[-1]);
 }
 
-LIBDEFLATEEXPORT void LIBDEFLATEAPI
+LIBDEFLATEAPI void
 libdeflate_set_memory_allocator(void *(*malloc_func)(size_t),
 				void (*free_func)(void *))
 {
@@ -140,3 +138,14 @@ memcmp(const void *s1, const void *s2, size_t n)
 	return 0;
 }
 #endif /* FREESTANDING */
+
+#ifdef LIBDEFLATE_ENABLE_ASSERTIONS
+#include <stdio.h>
+#include <stdlib.h>
+void
+libdeflate_assertion_failed(const char *expr, const char *file, int line)
+{
+	fprintf(stderr, "Assertion failed: %s at %s:%d\n", expr, file, line);
+	abort();
+}
+#endif /* LIBDEFLATE_ENABLE_ASSERTIONS */
