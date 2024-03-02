@@ -91,9 +91,9 @@ see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page
  - [fast-lzma2 1.0.1](https://github.com/conor42/fast-lzma2)
  - [gipfeli 2016-07-13](https://github.com/google/gipfeli)
  - [glza 0.8](https://encode.su/threads/2427-GLZA)
- - [libdeflate v1.6](https://github.com/ebiggers/libdeflate)
+ - [libdeflate v1.18](https://github.com/ebiggers/libdeflate)
  - [lizard v1.0 (formerly lz5)](https://github.com/inikep/lizard)
- - [lz4/lz4hc v1.9.3](https://github.com/lz4/lz4)
+ - [lz4/lz4hc v1.9.4](https://github.com/lz4/lz4)
  - [lzf 3.6](http://software.schmorp.de/pkg/liblzf.html)
  - [lzfse/lzvn 1.0](https://github.com/lzfse/lzfse)
  - [lzg 1.0.10](https://liblzg.bitsnbites.eu/)
@@ -114,10 +114,10 @@ see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page
  - [ucl 1.03](http://www.oberhumer.com/opensource/ucl/)
  - [wflz 2015-09-16](https://github.com/ShaneWF/wflz) - WARNING: it can throw SEGFAULT compiled with gcc 4.9+ -O3
  - [xpack 2016-06-02](https://github.com/ebiggers/xpack)
- - [xz 5.2.4](https://tukaani.org/xz/)
+ - [xz 5.2.12](https://tukaani.org/xz/)
  - [yalz77 2015-09-19](https://github.com/ivan-tkatchev/yalz77)
  - [yappy 2014-03-22](https://encode.su/threads/2825-Yappy-(working)-compressor) - WARNING: fails to decompress properly on ARM
- - [zlib 1.2.11](http://zlib.net)
+ - [zlib 1.2.13](http://zlib.net)
  - [zling 2018-10-12](https://github.com/richox/libzling) - according to the author using libzling in a production environment is not a good idea
  - [zstd 1.5.5](https://github.com/facebook/zstd)
  - [nvcomp 1.2.3](https://github.com/NVIDIA/nvcomp) - If CUDA is available.

@@ -1,7 +1,7 @@
 #ifndef LZBENCH_COMPRESSORS_H
 #define LZBENCH_COMPRESSORS_H
 
-#include <stdlib.h> 
+#include <stdlib.h>
 #include <stdint.h> // int64_t
 
 int64_t lzbench_memcpy(char *inbuf, size_t insize, char *outbuf, size_t outsize, size_t , size_t, char* );
