@@ -257,7 +257,7 @@ endif
 ifeq "$(DONT_BUILD_LZMA)" "1"
 	DEFINES += -DBENCH_REMOVE_LZMA
 else
-	LZMA_FILES = lzma/LzFind.o lzma/LzmaDec.o lzma/LzmaEnc.o
+	LZMA_FILES = lzma/LzFind.o lzma/LzmaDec.o lzma/LzmaEnc.o lzma/CpuArch.o lzma/Threads.o lzma/LzFindMt.o lzma/LzFindOpt.o
 endif
 
 #DONT_BUILD_LZMAT = 1
