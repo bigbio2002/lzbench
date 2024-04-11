@@ -102,7 +102,7 @@ see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page
  - [lzlib 1.14](http://www.nongnu.org/lzip)
  - [lzma v23.01](http://7-zip.org)
  - [lzmat 1.01 v1.0](https://github.com/nemequ/lzmat) - WARNING: it contains bugs (decompression error; returns 0); it can throw SEGFAULT compiled with gcc 4.9+ -O3
- - [lzo 2.10](http://www.oberhumer.com/opensource/lzo)
+ - [lzo 2.10](https://www.oberhumer.com/opensource/lzo)
  - [lzrw 15-Jul-1991](https://en.wikipedia.org/wiki/LZRW)
  - [lzsse 2019-04-18 (1847c3e827)](https://github.com/ConorStokes/LZSSE)
  - [pithy 2011-12-24](https://github.com/johnezang/pithy) - WARNING: it contains bugs (decompression error; returns 0)
@@ -111,13 +111,13 @@ see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page
  - [slz 1.2.0](http://www.libslz.org/) - only a compressor, uses zlib for decompression
  - [snappy 2020-07-11 (4dd277f)](https://github.com/google/snappy)
  - [tornado 0.6a](http://freearc.org)
- - [ucl 1.03](http://www.oberhumer.com/opensource/ucl/)
+ - [ucl 1.03](https://www.oberhumer.com/opensource/ucl/)
  - [wflz 2015-09-16](https://github.com/ShaneWF/wflz) - WARNING: it can throw SEGFAULT compiled with gcc 4.9+ -O3
  - [xpack 2016-06-02](https://github.com/ebiggers/xpack)
  - [xz 5.2.12](https://tukaani.org/xz/)
  - [yalz77 2015-09-19](https://github.com/ivan-tkatchev/yalz77)
  - [yappy 2014-03-22](https://encode.su/threads/2825-Yappy-(working)-compressor) - WARNING: fails to decompress properly on ARM
- - [zlib 1.2.13](http://zlib.net)
+ - [zlib 1.3.1](https://zlib.net)
  - [zling 2018-10-12](https://github.com/richox/libzling) - according to the author using libzling in a production environment is not a good idea
  - [zstd 1.5.5](https://github.com/facebook/zstd)
  - [nvcomp 1.2.3](https://github.com/NVIDIA/nvcomp) - If CUDA is available.
