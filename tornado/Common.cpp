@@ -25,7 +25,7 @@ int g_allocCountBig = 0;
 #define alloc_debug_printf(x)
 #endif
 
-void *MyAlloc(size_t size) throw()
+void *MyAlloc_Tornado(size_t size) throw()
 {
   if (size == 0)
     return 0;
@@ -33,7 +33,7 @@ void *MyAlloc(size_t size) throw()
   return ::malloc(size);
 }
 
-void MyFree(void *address) throw()
+void MyFree_Tornado(void *address) throw()
 {
   if (address != 0)
     alloc_debug_printf((stderr, "  Free; count = %10d\n", --g_allocCount));
