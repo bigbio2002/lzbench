@@ -183,7 +183,7 @@ int64_t lzbench_fastlz_decompress(char *inbuf, size_t insize, char *outbuf, size
 	return fastlz_decompress(inbuf, insize, outbuf, outsize);
 }
 
-#endif
+#endif // BENCH_REMOVE_FASTLZ
 
 
 
@@ -239,7 +239,7 @@ int64_t lzbench_gipfeli_decompress(char *inbuf, size_t insize, char *outbuf, siz
     return res;
 }
 
-#endif
+#endif // BENCH_REMOVE_GIPFELI
 
 
 
@@ -259,7 +259,7 @@ int64_t lzbench_glza_decompress(char *inbuf, size_t insize, char *outbuf, size_t
 	return outsize;
 }
 
-#endif
+#endif // BENCH_REMOVE_GLZA
 
 
 
@@ -285,7 +285,7 @@ int64_t lzbench_libdeflate_decompress(char *inbuf, size_t insize, char *outbuf, 
     }
     return res;
 }
-#endif
+#endif // BENCH_REMOVE_LIBDEFLATE
 
 
 
@@ -313,7 +313,7 @@ int64_t lzbench_lz4_decompress(char *inbuf, size_t insize, char *outbuf, size_t 
 	return LZ4_decompress_safe(inbuf, outbuf, insize, outsize);
 }
 
-#endif
+#endif // BENCH_REMOVE_LIBDEFLATE
 
 
 
@@ -335,7 +335,7 @@ int64_t lzbench_lzf_decompress(char *inbuf, size_t insize, char *outbuf, size_t 
 	return lzf_decompress(inbuf, insize, outbuf, outsize);
 }
 
-#endif
+#endif // BENCH_REMOVE_LZF
 
 
 
@@ -365,7 +365,7 @@ int64_t lzbench_lzfse_decompress(char *inbuf, size_t insize, char *outbuf, size_
 	return lzfse_decode_buffer((uint8_t*)outbuf, outsize, (uint8_t*)inbuf, insize, workmem);
 }
 
-#endif
+#endif // BENCH_REMOVE_LZFSE
 
 
 
@@ -395,7 +395,7 @@ int64_t lzbench_lzvn_decompress(char *inbuf, size_t insize, char *outbuf, size_t
 	return lzvn_decode_buffer_scratch((uint8_t*)outbuf, outsize, (uint8_t*)inbuf, insize, workmem);
 }
 
-#endif
+#endif // BENCH_REMOVE_LZVN
 
 
 
@@ -417,7 +417,7 @@ int64_t lzbench_lzg_decompress(char *inbuf, size_t insize, char *outbuf, size_t 
     return LZG_Decode((const unsigned char*)inbuf, insize, (unsigned char*)outbuf, outsize);
 }
 
-#endif
+#endif // BENCH_REMOVE_LZG
 
 
 
@@ -459,7 +459,7 @@ int64_t lzbench_lzham_decompress(char *inbuf, size_t insize, char *outbuf, size_
 	return outsize;
 }
 
-#endif
+#endif // BENCH_REMOVE_LZHAM
 
 
 
@@ -476,7 +476,7 @@ int64_t lzbench_lzjb_decompress(char *inbuf, size_t insize, char *outbuf, size_t
 	return lzjb_decompress2010((uint8_t*)inbuf, (uint8_t*)outbuf, insize, outsize, 0);
 }
 
-#endif
+#endif // BENCH_REMOVE_LZJB
 
 
 
@@ -587,7 +587,7 @@ int64_t lzbench_lzlib_decompress(char *inbuf, size_t insize, char *outbuf, size_
   return new_pos;
 }
 
-#endif
+#endif // BENCH_REMOVE_LZLIB
 
 
 
@@ -599,10 +599,11 @@ int64_t lzbench_lzlib_decompress(char *inbuf, size_t insize, char *outbuf, size_
 #include "lzma/LzmaEnc.h"
 
 #ifndef BENCH_REMOVE_TORNADO
-static void *SzAlloc(ISzAllocPtr p, size_t size) { (void)p; return MyAlloc(size); }
-static void SzFree(ISzAllocPtr p, void *address) { (void)p; MyFree(address); }
+#include "tornado/Common.h"
+void *SzAlloc(ISzAllocPtr p, size_t size) { (void)p; return MyAlloc_Tornado(size); }
+void SzFree(ISzAllocPtr p, void *address) { (void)p; MyFree_Tornado(address); }
 const ISzAlloc g_Alloc = { SzAlloc, SzFree };
-#endif
+#endif // BENCH_REMOVE_TORNADO
 
 int64_t lzbench_lzma_compress(char *inbuf, size_t insize, char *outbuf, size_t outsize, size_t level, size_t, char*)
 {
@@ -644,7 +645,7 @@ int64_t lzbench_lzma_decompress(char *inbuf, size_t insize, char *outbuf, size_t
     return out_len;
 }
 
-#endif
+#endif // BENCH_REMOVE_LZMA
 
 
 
@@ -667,7 +668,7 @@ int64_t lzbench_lzmat_decompress(char *inbuf, size_t insize, char *outbuf, size_
 	return decomplen;
 }
 
-#endif
+#endif // BENCH_REMOVE_LZMAT
 
 
 
@@ -1020,7 +1021,7 @@ int64_t lzbench_lzrw_decompress(char *inbuf, size_t insize, char *outbuf, size_t
 	return decomplen;
 }
 
-#endif
+#endif // BENCH_REMOVE_LZO
 
 
 
@@ -1138,7 +1139,7 @@ int64_t lzbench_lzsse8fast_compress(char *inbuf, size_t insize, char *outbuf, si
     return LZSSE8_CompressFast((LZSSE8_FastParseState*) workmem, inbuf, insize, outbuf, outsize);
 }
 
-#endif
+#endif // BENCH_REMOVE_LZSSE
 
 
 
@@ -1159,7 +1160,7 @@ int64_t lzbench_pithy_decompress(char *inbuf, size_t insize, char *outbuf, size_
 	return 0;
 }
 
-#endif
+#endif // BENCH_REMOVE_PITHY
 
 
 #ifndef BENCH_REMOVE_QUICKLZ
@@ -1208,7 +1209,7 @@ int64_t lzbench_quicklz_decompress(char *inbuf, size_t insize, char *outbuf, siz
     return res;
 }
 
-#endif
+#endif // BENCH_REMOVE_QUICKLZ
 
 
 
@@ -1225,7 +1226,7 @@ int64_t lzbench_shrinker_decompress(char *inbuf, size_t insize, char *outbuf, si
 	return shrinker_decompress(inbuf, outbuf, outsize); 
 }
 
-#endif
+#endif // BENCH_REMOVE_SHRINKER
 
 
 #ifndef BENCH_REMOVE_SNAPPY
@@ -1243,7 +1244,7 @@ int64_t lzbench_snappy_decompress(char *inbuf, size_t insize, char *outbuf, size
 	return outsize;
 }
 
-#endif
+#endif // BENCH_REMOVE_SNAPPY
 
 
 
@@ -1261,7 +1262,7 @@ int64_t lzbench_tornado_decompress(char *inbuf, size_t insize, char *outbuf, siz
 	return tor_decompress((uint8_t*)inbuf, insize, (uint8_t*)outbuf, outsize); 
 }
 
-#endif
+#endif // BENCH_REMOVE_TORNADO
 
 
 
@@ -1322,7 +1323,7 @@ int64_t lzbench_ucl_nrv2e_decompress(char *inbuf, size_t insize, char *outbuf, s
 	return decomplen;
 }
 
-#endif
+#endif // BENCH_REMOVE_UCL
 
 
 
@@ -1359,7 +1360,7 @@ int64_t lzbench_wflz_decompress(char *inbuf, size_t insize, char *outbuf, size_t
     return outsize;
 }
 
-#endif
+#endif // BENCH_REMOVE_WFLZ
 
 
 
@@ -1409,7 +1410,7 @@ int64_t lzbench_xpack_decompress(char *inbuf, size_t insize, char *outbuf, size_
     return outsize;
 }
 
-#endif
+#endif // BENCH_REMOVE_XPACK
 
 
 
@@ -1426,7 +1427,7 @@ int64_t lzbench_xz_decompress(char *inbuf, size_t insize, char *outbuf, size_t o
     return xz_alone_decompress(inbuf, insize, outbuf, outsize, 0, 0, 0);
 }
 
-#endif
+#endif // BENCH_REMOVE_XZ
 
 
 
@@ -1453,7 +1454,7 @@ int64_t lzbench_yalz77_decompress(char *inbuf, size_t insize, char *outbuf, size
   return decompressed.size();
 }
 
-#endif
+#endif // BENCH_REMOVE_YALZ77
 
 
 
@@ -1476,7 +1477,7 @@ int64_t lzbench_yappy_decompress(char *inbuf, size_t insize, char *outbuf, size_
 	return YappyUnCompress((uint8_t*)inbuf, (uint8_t*)inbuf+insize, (uint8_t*)outbuf) - (uint8_t*)outbuf; 
 }
 
-#endif
+#endif // BENCH_REMOVE_YAPPY
 
 
 
@@ -1501,7 +1502,7 @@ int64_t lzbench_zlib_decompress(char *inbuf, size_t insize, char *outbuf, size_t
 	return outsize;
 }
 
-#endif
+#endif // BENCH_REMOVE_ZLIB
 
 
 
@@ -1570,7 +1571,7 @@ int64_t lzbench_slz_decompress(char *inbuf, size_t insize, char *outbuf, size_t 
 	}
 	return outsize;
 }
-#endif
+#endif // !defined(BENCH_REMOVE_SLZ) && !defined(BENCH_REMOVE_ZLIB)
 
 
 
@@ -1647,7 +1648,7 @@ int64_t lzbench_zling_decompress(char *inbuf, size_t insize, char *outbuf, size_
 	return outputter.GetOutputSize();
 } 
 
-#endif
+#endif // BENCH_REMOVE_ZLING
 
 
 
@@ -1744,7 +1745,7 @@ int64_t lzbench_zstd_LDM_compress(char *inbuf, size_t insize, char *outbuf, size
     ZSTD_CCtx_setParameter(zstd_params->cctx, ZSTD_c_enableLongDistanceMatching, 1);
     return lzbench_zstd_compress(inbuf, insize, outbuf, outsize, level, windowLog, (char*) zstd_params);
 }
-#endif
+#endif // BENCH_REMOVE_ZSTD
 
 
 #ifdef BENCH_HAS_NAKAMICHI
@@ -1760,7 +1761,7 @@ int64_t lzbench_nakamichi_decompress(char *inbuf, size_t insize, char *outbuf, s
 	return NakaDecompress(outbuf, inbuf, insize);
 }
 
-#endif
+#endif // BENCH_REMOVE_NAKAMICHI
 
 #ifdef BENCH_HAS_CUDA
 #include <cuda_runtime.h>

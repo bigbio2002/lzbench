@@ -15,8 +15,21 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64)
+# define FREEARC_WIN
+#else
+# define FREEARC_UNIX
+#endif
+
 #if defined(_M_X64) || defined(_M_AMD64) || defined(__x86_64__) || defined(_ARCH_PPC64) || defined(__arm64__) || defined(__aarch64__)
-#define FREEARC_64BIT
+# define FREEARC_64BIT
+#endif
+
+/* Test for a big-endian machine */
+#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
+# define FREEARC_MOTOROLA_BYTE_ORDER 1
+#else
+# define FREEARC_INTEL_BYTE_ORDER    1
 #endif
 
 #ifdef FREEARC_WIN
@@ -28,6 +41,9 @@
 #  endif
 #  define strcasecmp stricmp
 #endif
+
+#define FREEARC_STANDALONE_TORNADO
+//#define FREEARC_NO_TIMING
 
 #ifdef __cplusplus
 extern "C" {
