@@ -87,7 +87,7 @@ see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page
  - [crush 1.0](https://sourceforge.net/projects/crush/)
  - [csc 2016-10-13](https://github.com/fusiyuan2010/CSC) - WARNING: it can throw SEGFAULT compiled with Apple LLVM version 7.3.0 (clang-703.0.31)
  - [density 0.14.2](https://github.com/centaurean/density) - WARNING: it contains bugs (shortened decompressed output))
- - [fastlz 0.5.0](http://fastlz.org)
+ - [fastlz 0.5.0](https://fastlz.org)
  - [fast-lzma2 1.0.1](https://github.com/conor42/fast-lzma2)
  - [gipfeli 2016-07-13](https://github.com/google/gipfeli)
  - [glza 0.8](https://encode.su/threads/2427-GLZA)
@@ -99,8 +99,8 @@ see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page
  - [lzg 1.0.10](https://liblzg.bitsnbites.eu/)
  - [lzham 1.0](https://github.com/richgel999/lzham_codec)
  lzjb 2010
- - [lzlib 1.14](http://www.nongnu.org/lzip)
- - [lzma v23.01](http://7-zip.org)
+ - [lzlib 1.14](https://www.nongnu.org/lzip)
+ - [lzma v23.01](https://7-zip.org)
  - [lzmat 1.01 v1.0](https://github.com/nemequ/lzmat) - WARNING: it contains bugs (decompression error; returns 0); it can throw SEGFAULT compiled with gcc 4.9+ -O3
  - [lzo 2.10](https://www.oberhumer.com/opensource/lzo)
  - [lzrw 15-Jul-1991](https://en.wikipedia.org/wiki/LZRW)
