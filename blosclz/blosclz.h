@@ -1,9 +1,11 @@
 /*********************************************************************
   Blosc - Blocked Shuffling and Compression Library
 
-  Author: Francesc Alted <francesc@blosc.org>
+  Copyright (C) 2021  The Blosc Developers <blosc@blosc.org>
+  https://blosc.org
+  License: BSD 3-Clause (see LICENSE.txt)
 
-  See LICENSES/BLOSC.txt for details about copyright and rights to use.
+  See LICENSE.txt for details about copyright and rights to use.
 **********************************************************************/
 
 /*********************************************************************
@@ -15,10 +17,14 @@
 
 #ifndef BLOSCLZ_H
 #define BLOSCLZ_H
+#include "context.h"
 
 #if defined (__cplusplus)
 extern "C" {
 #endif
+
+#define BLOSCLZ_VERSION_STRING "2.5.1"
+
 
 /**
   Compress a block of data in the input buffer and returns the size of
@@ -40,8 +46,8 @@ extern "C" {
   The input buffer and the output buffer can not overlap.
 */
 
-int blosclz_compress(const int opt_level, const void* input, int length,
-                     void* output, int maxout, int shuffle);
+int blosclz_compress(int opt_level, const void* input, int length,
+                     void* output, int maxout, blosc2_context* ctx);
 
 /**
   Decompress a block of compressed data and returns the size of the
@@ -56,13 +62,6 @@ int blosclz_compress(const int opt_level, const void* input, int length,
  */
 
 int blosclz_decompress(const void* input, int length, void* output, int maxout);
-
-/**
-  Same as above, except that it is not safe to run on invalid/untrusted input,
-  and may be slightly faster.
- */
-int blosclz_decompress_unsafe(const void* input, int length, void* output,
-                              int maxout);
 
 #if defined (__cplusplus)
 }
