@@ -1,7 +1,7 @@
 /*********************************************************************
   Blosc - Blocked Shuffling and Compression Library
 
-  Copyright (c) 2021  Blosc Development Team <blosc@blosc.org>
+  Copyright (c) 2021  The Blosc Development Team <blosc@blosc.org>
   https://blosc.org
   License: BSD 3-Clause (see LICENSE.txt)
 
@@ -131,7 +131,7 @@ typedef struct {
  * @param chunkshape The chunk shape.
  * @param blockshape The block shape.
  * @param dtype The data type expressed as a string version.
- * @param dtype_format The data type format; DTYPE_NUMPY_FORMAT should be chosen for NumPy compatibility.
+ * @param dtype_format The data type format; default is DTYPE_NUMPY_FORMAT.
  * @param metalayers The memory pointer to the list of the metalayers desired.
  * @param nmetalayers The number of metalayers.
  *
@@ -198,8 +198,8 @@ BLOSC_EXPORT int b2nd_zeros(b2nd_context_t *ctx, b2nd_array_t **array);
  * uninitialized portions of the array.
  *
  * @param ctx The b2nd context for the new array.
- * @param array The memory pointer where the array will be created.
  * @param fill_value Default value for uninitialized portions of the array.
+ * @param array The memory pointer where the array will be created.
  *
  * @return An error code.
  */
@@ -364,10 +364,10 @@ BLOSC_EXPORT int b2nd_get_slice_cbuffer(const b2nd_array_t *array, const int64_t
  * @brief Set a slice in a b2nd array using a C buffer.
  *
  * @param buffer The buffer where the slice data is.
- * @param buffershape The shape of the buffer.
  * @param buffersize The size (in bytes) of the buffer.
  * @param start The coordinates where the slice will begin.
  * @param stop The coordinates where the slice will end.
+ * @param buffershape The shape of the buffer.
  * @param array The b2nd array where the slice will be set
  *
  * @return An error code.
@@ -597,38 +597,6 @@ static inline int b2nd_deserialize_meta(
   int32_t slen = (int32_t) (pmeta - smeta);
   return (int)slen;
 }
-
-
-// Utilities for C buffers representing multidimensional arrays
-
-/**
- * @brief Copy a slice of a source array into another array. The arrays have
- * the same number of dimensions (though their shapes may differ), the same
- * item size, and they are stored as C buffers with contiguous data (any
- * padding is considered part of the array).
- *
- * @param ndim The number of dimensions in both arrays.
- * @param itemsize The size of the individual data item in both arrays.
- * @param src The buffer for getting the data from the source array.
- * @param src_pad_shape The shape of the source array, including padding.
- * @param src_start The source coordinates where the slice will begin.
- * @param src_stop The source coordinates where the slice will end.
- * @param dst The buffer for setting the data into the destination array.
- * @param dst_pad_shape The shape of the destination array, including padding.
- * @param dst_start The destination coordinates where the slice will be placed.
- *
- * @return An error code.
- *
- * @note Please make sure that slice boundaries fit within the source and
- * destination arrays before using this function, as it does not perform these
- * checks itself.
- */
-BLOSC_EXPORT int b2nd_copy_buffer(int8_t ndim,
-                                  uint8_t itemsize,
-                                  const void *src, const int64_t *src_pad_shape,
-                                  const int64_t *src_start, const int64_t *src_stop,
-                                  void *dst, const int64_t *dst_pad_shape,
-                                  const int64_t *dst_start);
 
 
 #ifdef __cplusplus

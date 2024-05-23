@@ -1,7 +1,7 @@
 /*********************************************************************
   Blosc - Blocked Shuffling and Compression Library
 
-  Copyright (c) 2021  Blosc Development Team <blosc@blosc.org>
+  Copyright (c) 2021  The Blosc Development Team <blosc@blosc.org>
   https://blosc.org
   License: BSD 3-Clause (see LICENSE.txt)
 
@@ -61,7 +61,7 @@
 #undef BLOSC_STRICT_ALIGN
 /* Modern ARM systems (like ARM64) should support unaligned access
    quite efficiently. */
-#elif defined(__ARM_FEATURE_UNALIGNED) && defined(__ARM64_ARCH_8__)
+#elif defined(__ARM_FEATURE_UNALIGNED)   /* ARM, GNU C */
 #undef BLOSC_STRICT_ALIGN
 #elif defined(_ARCH_PPC) || defined(__PPC__)
 /* Modern PowerPC systems (like POWER8) should support unaligned access
@@ -73,7 +73,7 @@
 #if defined(__SSE2__)
   #include <emmintrin.h>
 #endif
-#if defined(__AVX2__) || defined(__AVX512F__) || defined (__AVX512BW__)
+#if defined(__AVX2__)
   #include <immintrin.h>
 #endif
 

@@ -10,8 +10,7 @@ int64_t lzbench_return_0(char *inbuf, size_t insize, char *outbuf, size_t outsiz
 
 
 #ifndef BENCH_REMOVE_BLOSCLZ
-#include "blosclz/blosclz.h"
-	int64_t lzbench_blosclz_compress(char *inbuf, size_t insize, char *outbuf, size_t outsize, size_t level, size_t, char*, blosc2_context *ctx);
+	int64_t lzbench_blosclz_compress(char *inbuf, size_t insize, char *outbuf, size_t outsize, size_t level, size_t, char*);
 	int64_t lzbench_blosclz_decompress(char *inbuf, size_t insize, char *outbuf, size_t outsize, size_t, size_t, char*);
 #else
 	#define lzbench_blosclz_compress NULL
