@@ -30,7 +30,7 @@
  * Generally it is best to leave it defined.
  */
 #define FASTLZ_SAFE
-#if defined(FASTLZ_USE_SAFE_DECOMPRESSOR) && (FASTLZ_USE_SAFE_DECOMPRESSOR == 0)
+#if defined(FASTLZ_USE_SAFE_DECOMPRESSOR) && !FASTLZ_USE_SAFE_DECOMPRESSOR
 #undef FASTLZ_SAFE
 #endif
 
@@ -233,7 +233,7 @@ int fastlz1_compress(const void* input, int length, void* output) {
   return op - (uint8_t*)output;
 }
 
-#if defined(FASTLZ_USE_MEMMOVE) && (FASTLZ_USE_MEMMOVE == 0)
+#if defined(FASTLZ_USE_MEMMOVE) && !FASTLZ_USE_MEMMOVE
 
 static void fastlz_memmove(uint8_t* dest, const uint8_t* src, uint32_t count) {
   do {

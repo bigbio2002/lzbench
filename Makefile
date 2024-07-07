@@ -161,7 +161,7 @@ else
     DENSITY_FILES += density/globals.o
 endif
 
-#DONT_BUILD_FASTLZ = 1
+DONT_BUILD_FASTLZ = 1
 ifeq "$(DONT_BUILD_FASTLZ)" "1"
 	DEFINES += -DBENCH_REMOVE_FASTLZ
 else
