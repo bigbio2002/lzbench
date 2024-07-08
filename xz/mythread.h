@@ -174,7 +174,7 @@ mythread_join(mythread thread)
 }
 
 
-// Initiatlizes a mutex. Returns zero on success and non-zero on error.
+// Initializes a mutex. Returns zero on success and non-zero on error.
 static inline int
 mythread_mutex_init(mythread_mutex *mutex)
 {
@@ -372,7 +372,7 @@ typedef struct {
 			abort(); \
 		if (pending_) { \
 			func(); \
-			if (!InitOnceComplete(&once, 0, NULL)) \
+			if (!InitOnceComplete(&once_, 0, NULL)) \
 				abort(); \
 		} \
 	} while (0)

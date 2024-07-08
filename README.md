@@ -114,7 +114,7 @@ see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page
  - [ucl 1.03](https://www.oberhumer.com/opensource/ucl/)
  - [wflz 2015-09-16](https://github.com/ShaneWF/wflz) - WARNING: it can throw SEGFAULT compiled with gcc 4.9+ -O3
  - [xpack 2016-06-02](https://github.com/ebiggers/xpack)
- - [xz 5.2.12](https://tukaani.org/xz/)
+ - [xz 5.2.13](https://tukaani.org/xz/)
  - [yalz77 2015-09-19](https://github.com/ivan-tkatchev/yalz77)
  - [yappy 2014-03-22](https://encode.su/threads/2825-Yappy-(working)-compressor) - WARNING: fails to decompress properly on ARM
  - [zlib 1.3.1](https://zlib.net)

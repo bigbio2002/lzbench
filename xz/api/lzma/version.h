@@ -22,7 +22,7 @@
  */
 #define LZMA_VERSION_MAJOR 5
 #define LZMA_VERSION_MINOR 2
-#define LZMA_VERSION_PATCH 12
+#define LZMA_VERSION_PATCH 13
 #define LZMA_VERSION_STABILITY LZMA_VERSION_STABILITY_STABLE
 
 #ifndef LZMA_VERSION_COMMIT
@@ -95,7 +95,7 @@
 		LZMA_VERSION_COMMIT)
 
 
-/* #ifndef is needed for use with windres (MinGW or Cygwin). */
+/* #ifndef is needed for use with windres (MinGW-w64 or Cygwin). */
 #ifndef LZMA_H_INTERNAL_RC
 
 /**
