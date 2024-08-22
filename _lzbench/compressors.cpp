@@ -28,7 +28,7 @@ int64_t lzbench_return_0(char *inbuf, size_t insize, char *outbuf, size_t outsiz
 
 int64_t lzbench_blosclz_compress(char *inbuf, size_t insize, char *outbuf, size_t outsize, size_t level, size_t, char*)
 {
-    return blosclz_compress(level, inbuf, insize, outbuf, outsize);
+    return blosclz_compress(level, inbuf, insize, outbuf, outsize, 1);
 }
 
 int64_t lzbench_blosclz_decompress(char *inbuf, size_t insize, char *outbuf, size_t outsize, size_t , size_t, char*)
