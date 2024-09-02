@@ -267,7 +267,7 @@ else
 	LZMAT_FILES = lzmat/lzmat_dec.o lzmat/lzmat_enc.o
 endif
 
-#DONT_BUILD_LZO = 1
+DONT_BUILD_LZO = 1
 ifeq "$(DONT_BUILD_LZO)" "1"
 	DEFINES += -DBENCH_REMOVE_LZO
 else
