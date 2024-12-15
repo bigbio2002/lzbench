@@ -83,6 +83,7 @@
 #  define STRICT_ALIGN 1
 #else
 #  define STRICT_ALIGN 0
+# endif
 #endif
 
 /*
