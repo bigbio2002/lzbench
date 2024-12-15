@@ -44,6 +44,7 @@ fast_copy.68000 for an exact formal definition of the semantics of the
 fast_copy procedure.
 
 8. Header files can be found in lzrw_headers.h.
+*/
 
 /******************************************************************************/
 /*                                                                            */
