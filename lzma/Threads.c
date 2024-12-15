@@ -545,7 +545,11 @@ LONG InterlockedIncrement(LONG volatile *addend)
   #if defined(__clang__) && (__clang_major__ >= 8)
     #pragma GCC diagnostic ignored "-Watomic-implicit-seq-cst"
   #endif
+  #if __has_builtin(__sync_add_and_fetch)
     return __sync_add_and_fetch(addend, 1);
+  #else
+    #error error
+  #endif
   #endif
 }
 
