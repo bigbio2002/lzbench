@@ -80,11 +80,11 @@ Supported compressors
 no longer maintained.  For information about the security of the various compressors, 
 see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page.
 
- - [blosclz 2.0.0(?)](https://github.com/Blosc/c-blosc(2?))
+ - [blosclz 2.0.0(?)](https://github.com/Blosc/c-blosc2)
  - [brieflz 1.3.0](https://github.com/jibsen/brieflz)
  - [brotli 1.1.0](https://github.com/google/brotli)
  - [bzip2 1.0.8](http://www.bzip.org/downloads.html)
- - [crush 1.0](https://sourceforge.net/projects/crush/)
+ - [crush 1.0](https://sourceforge.net/projects/crush)
  - [csc 2016-10-13](https://github.com/fusiyuan2010/CSC) - WARNING: it can throw SEGFAULT compiled with Apple LLVM version 7.3.0 (clang-703.0.31)
  - [density 0.14.2](https://github.com/centaurean/density) - WARNING: it contains bugs (shortened decompressed output))
  - [fastlz 2024-08-01](https://github.com/ariya/FastLZ)
@@ -94,9 +94,9 @@ see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page
  - [libdeflate v1.22](https://github.com/ebiggers/libdeflate)
  - [lizard v1.0 (formerly lz5)](https://github.com/inikep/lizard)
  - [lz4/lz4hc v1.10.0](https://github.com/lz4/lz4)
- - [lzf 3.6](http://software.schmorp.de/pkg/liblzf.html)
+ - [lzf 3.6](https://software.schmorp.de/pkg/liblzf.html)
  - [lzfse/lzvn 1.0](https://github.com/lzfse/lzfse)
- - [lzg 1.0.10](https://liblzg.bitsnbites.eu/)
+ - [lzg 1.0.10](https://liblzg.bitsnbites.eu)
  - [lzham 1.0](https://github.com/richgel999/lzham_codec)
  lzjb 2010
  - [lzlib 1.14](https://www.nongnu.org/lzip)
@@ -108,16 +108,16 @@ see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page
  - [pithy 2011-12-24](https://github.com/johnezang/pithy) - WARNING: it contains bugs (decompression error; returns 0)
  - [quicklz 1.5.0](http://www.quicklz.com)
  - [shrinker 0.1](https://code.google.com/p/data-shrinker) - WARNING: it can throw SEGFAULT compiled with gcc 4.9+ -O3
- - [slz 1.2.0](http://www.libslz.org/) - only a compressor, uses zlib for decompression
+ - [slz 1.2.0](http://www.libslz.org) - only a compressor, uses zlib for decompression
  - [snappy 1.2.0](https://github.com/google/snappy)
- - [tornado 0.6a](http://freearc.org)
- - [ucl 1.03](https://www.oberhumer.com/opensource/ucl/)
+ - [tornado 0.6a](https://web.archive.org/web/20161118232624/http://freearc.org)
+ - [ucl 1.03](https://www.oberhumer.com/opensource/ucl)
  - [wflz 2015-09-16](https://github.com/ShaneWF/wflz) - WARNING: it can throw SEGFAULT compiled with gcc 4.9+ -O3
  - [xpack 2016-06-02](https://github.com/ebiggers/xpack)
  - [xz 5.2.13](https://tukaani.org/xz/)
  - [yalz77 2015-09-19](https://github.com/ivan-tkatchev/yalz77)
  - [yappy 2014-03-22](https://encode.su/threads/2825-Yappy-(working)-compressor) - WARNING: fails to decompress properly on ARM
- - [zlib 1.3.1](https://zlib.net)
+ - [zlib 1.3.1](https://www.zlib.net)
  - [zling 2018-10-12](https://github.com/richox/libzling) - according to the author using libzling in a production environment is not a good idea
  - [zstd 1.5.6](https://github.com/facebook/zstd)
  - [nvcomp 1.2.3](https://github.com/NVIDIA/nvcomp) - If CUDA is available.
