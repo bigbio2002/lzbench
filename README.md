@@ -80,7 +80,7 @@ Supported compressors
 no longer maintained.  For information about the security of the various compressors, 
 see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page.
 
- - [blosclz 2.0.0(?)](https://github.com/Blosc/c-blosc2)
+ - [blosclz 1.18.1](https://github.com/Blosc/c-blosc2)
  - [brieflz 1.3.0](https://github.com/jibsen/brieflz)
  - [brotli 1.1.0](https://github.com/google/brotli)
  - [bzip2 1.0.8](http://www.bzip.org/downloads.html)
