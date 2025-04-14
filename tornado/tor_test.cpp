@@ -35,15 +35,15 @@
 #endif
 
 #include <stdint.h>
-#include "tor_test.h" 
+#include "tor_test.h"
 
 #include "Tornado.cpp"
 #include "Common.cpp"
 
 
-int compress_all_at_once = 0; 
+int compress_all_at_once = 0;
 
-struct Results 
+struct Results_test
 {
 	uint32_t inpos, inlen, outpos, outlen;
 	uint8_t *inbuf, *outbuf;
@@ -53,12 +53,12 @@ struct Results
 // Also it's called by the driver to init/shutdown its processing
 int ReadWriteCallback (const char *what, void *buf, int size, void *r_)
 {
-  Results &r = *(Results*)r_;        // Accumulator for compression statistics
+  Results_test &r = *(Results_test*)r_;        // Accumulator for compression statistics
 
 //  printf("what=%s size=%d\n", what, size);
 
   if (strequ(what,"init")) {
-  
+
 	  r.inpos = r.outpos = 0;
 	  return FREEARC_OK;
 
@@ -106,7 +106,7 @@ PackMethod second_Tornado_method[] =
 uint32_t tor_compress(uint8_t method, uint8_t* inbuf, uint32_t inlen, uint8_t* outbuf, uint32_t outlen)
 {
 	PackMethod m;
-	static Results r; 
+	static Results_test r;
 	r.inbuf = inbuf;
 	r.outbuf = outbuf;
 	r.inlen = inlen;
@@ -117,22 +117,22 @@ uint32_t tor_compress(uint8_t method, uint8_t* inbuf, uint32_t inlen, uint8_t* o
 		m = second_Tornado_method[method-20];
 	else
 		m = std_Tornado_method[method];
-			
+
 	m.buffer = mymin (m.buffer, r.inlen+LOOKAHEAD*2);
-	int result = tor_compress (m, ReadWriteCallback, &r, NULL, -1); 
+	int result = tor_compress (m, ReadWriteCallback, &r, NULL, -1);
 	return r.outpos;
 }
 
 uint32_t tor_decompress(uint8_t* inbuf, uint32_t inlen, uint8_t* outbuf, uint32_t outlen)
 {
-	static Results r; 
+	static Results_test r;
 	r.inbuf = inbuf;
 	r.outbuf = outbuf;
 	r.inlen = inlen;
     r.outlen = outlen;
 
 	ReadWriteCallback ("init", NULL, 0, &r);
-	int result = tor_decompress(ReadWriteCallback, &r, NULL, -1); 
-	ReadWriteCallback ("done", NULL, 0, &r); 
+	int result = tor_decompress(ReadWriteCallback, &r, NULL, -1);
+	ReadWriteCallback ("done", NULL, 0, &r);
 	return r.outpos;
 }
