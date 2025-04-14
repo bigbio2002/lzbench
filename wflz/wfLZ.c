@@ -502,11 +502,11 @@ void wfLZ_Decompress( const uint8_t* WF_RESTRICT const in, uint8_t* WF_RESTRICT 
 	const uint8_t* WF_RESTRICT src = in + sizeof( wfLZ_Header );
 	ureg_t numLiterals = header->firstBlock.numLiterals;
 	wfLZ_Block* block;
-	ureg_t len;
+	ureg_t len = 0;
 	#ifdef WF_LZ_UNALIGNED_ACCESS
-		ureg_t dist;
+		ureg_t dist = 0;
 	#else
-		uint16_t dist;
+		uint16_t dist = 0;
 	#endif
 
 	WF_LZ_DBG_DECOMPRESS_INIT

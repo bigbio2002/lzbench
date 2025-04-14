@@ -94,6 +94,7 @@ RMF_match RMF_getMatch(FL2_dataBlock block,
 
         RMF_match match;
         match.length = 0;
+        match.dist = 0;
 
         if (link == RADIX_NULL_LINK)
             return match;
@@ -115,6 +116,7 @@ RMF_match RMF_getMatch(FL2_dataBlock block,
 
         RMF_match match;
         match.length = 0;
+        match.dist = 0;
 
         if (link == RADIX_NULL_LINK)
             return match;
@@ -147,6 +149,7 @@ RMF_match RMF_getNextMatch(FL2_dataBlock block,
 
         RMF_match match;
         match.length = 0;
+        match.dist = 0;
 
         if (link == RADIX_NULL_LINK)
             return match;
@@ -172,6 +175,7 @@ RMF_match RMF_getNextMatch(FL2_dataBlock block,
 
         RMF_match match;
         match.length = 0;
+        match.dist = 0;
 
         if (link == RADIX_NULL_LINK)
             return match;

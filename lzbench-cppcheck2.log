@@ -1,0 +1,871 @@
+_lzbench/compressors.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+1/424 files checked 0% done
+2/424 files checked 0% done
+_lzbench/lzbench.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+_lzbench/lzbench.cpp:594:5: error: Address of local auto-variable assigned to a function parameter. [autoVariables]
+    params->in_filename = text.c_str();
+    ^
+_lzbench/lzbench.cpp:707:17: error: Address of local auto-variable assigned to a function parameter. [autoVariables]
+                params->in_filename = partname.c_str();
+                ^
+_lzbench/lzbench.cpp:604:9: error: Using 'memcpy' on struct that contains a 'std::vector'. [memsetClass]
+        memcpy(&params_memcpy, params, sizeof(lzbench_params_t));
+        ^
+_lzbench/lzbench.cpp:690:13: error: Using 'memcpy' on struct that contains a 'std::vector'. [memsetClass]
+            memcpy(&params_memcpy, params, sizeof(lzbench_params_t));
+            ^
+_lzbench/lzbench.cpp:811:5: error: Using 'memset' on struct that contains a 'std::vector'. [memsetClass]
+    memset(params, 0, sizeof(lzbench_params_t));
+    ^
+_lzbench/lzbench.cpp:943:5: error: Null pointer dereference: cpu_brand [nullPointer]
+    LZBENCH_PRINT(2, PROGNAME " " PROGVERSION " (%d-bit " PROGOS ")  %s\nAssembled by P.Skibinski\n\n", (uint32_t)(8 * sizeof(uint8_t*)), cpu_brand);
+    ^
+_lzbench/lzbench.cpp:942:33: note: Calling function 'cpu_brand_string' returns 0
+    cpu_brand = cpu_brand_string();
+                                ^
+_lzbench/lzbench.cpp:942:33: note: Assignment 'cpu_brand=cpu_brand_string()', assigned value is 0
+    cpu_brand = cpu_brand_string();
+                                ^
+_lzbench/lzbench.cpp:943:5: note: Null pointer dereference
+    LZBENCH_PRINT(2, PROGNAME " " PROGVERSION " (%d-bit " PROGOS ")  %s\nAssembled by P.Skibinski\n\n", (uint32_t)(8 * sizeof(uint8_t*)), cpu_brand);
+    ^
+_lzbench/lzbench.cpp:943:5: error: Null pointer dereference [nullPointer]
+    LZBENCH_PRINT(2, PROGNAME " " PROGVERSION " (%d-bit " PROGOS ")  %s\nAssembled by P.Skibinski\n\n", (uint32_t)(8 * sizeof(uint8_t*)), cpu_brand);
+    ^
+_lzbench/lzbench.cpp:807:9: error: Uninitialized variable: params->verbose [uninitvar]
+        LZBENCH_PRINT(2, "Allocation error : not enough memory%c\n", ' ');
+        ^
+_lzbench/lzbench.cpp:795:32: note: Assignment 'params=&lzparams', assigned value is <Uninit>
+    lzbench_params_t* params = &lzparams;
+                               ^
+_lzbench/lzbench.cpp:807:9: note: Uninitialized variable: params->verbose
+        LZBENCH_PRINT(2, "Allocation error : not enough memory%c\n", ' ');
+        ^
+3/424 files checked 1% done
+blosclz/blosclz.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+4/424 files checked 1% done
+5/424 files checked 1% done
+brieflz/brieflz.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+6/424 files checked 1% done
+7/424 files checked 1% done
+brieflz/depacks.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+8/424 files checked 2% done
+9/424 files checked 2% done
+10/424 files checked 2% done
+11/424 files checked 7% done
+12/424 files checked 7% done
+brotli/common/shared_dictionary.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+13/424 files checked 7% done
+brotli/common/transform.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+14/424 files checked 7% done
+15/424 files checked 7% done
+brotli/dec/decode.c:2836:60: error: syntax error [syntaxError]
+    BROTLI_DECODER_ERROR_CODES_LIST(BROTLI_ERROR_CODE_CASE_, BROTLI_NOTHING_)
+                                                           ^
+16/424 files checked 9% done
+17/424 files checked 9% done
+18/424 files checked 9% done
+brotli/enc/backward_references.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+19/424 files checked 9% done
+brotli/enc/backward_references_hq.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+brotli/enc/backward_references_hq.c:611:21: warning: Possible null pointer dereference: nodes [nullPointer]
+  uint32_t offset = nodes[0].u.next;
+                    ^
+brotli/enc/backward_references_hq.c:802:23: note: Assignment 'nodes=(num_bytes+1)>0?((struct ZopfliNode*)BrotliAllocate(m,(num_bytes+1)*sizeof(struct ZopfliNode))):NULL', assigned value is 0
+  ZopfliNode* nodes = BROTLI_ALLOC(m, ZopfliNode, num_bytes + 1);
+                      ^
+brotli/enc/backward_references_hq.c:809:51: note: Calling function 'BrotliZopfliCreateCommands', 3rd argument 'nodes' value is 0
+  BrotliZopfliCreateCommands(num_bytes, position, nodes, dist_cache,
+                                                  ^
+brotli/enc/backward_references_hq.c:611:21: note: Null pointer dereference
+  uint32_t offset = nodes[0].u.next;
+                    ^
+20/424 files checked 9% done
+brotli/enc/bit_cost.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+21/424 files checked 9% done
+brotli/enc/block_splitter.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+brotli/enc/block_splitter_inc.h:434:20: error: Pointer addition with NULL pointer. [nullPointerArithmetic]
+  tmp = histograms + num_histograms;
+                   ^
+brotli/enc/block_splitter_inc.h:433:16: note: Assignment 'histograms=(num_histograms+1)>0?((struct HistogramLiteral*)BrotliAllocate(m,(num_histograms+1)*sizeof(struct HistogramLiteral))):NULL', assigned value is 0
+  histograms = BROTLI_ALLOC(m, HistogramType, num_histograms + 1);
+               ^
+brotli/enc/block_splitter_inc.h:434:20: note: Null pointer addition
+  tmp = histograms + num_histograms;
+                   ^
+22/424 files checked 9% done
+brotli/enc/brotli_bit_stream.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+23/424 files checked 10% done
+brotli/enc/cluster.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+24/424 files checked 10% done
+25/424 files checked 10% done
+brotli/enc/compound_dictionary.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+brotli/enc/compound_dictionary.c:113:3: warning: Possible null pointer dereference: result [nullPointer]
+  result->magic = kLeanPreparedDictionaryMagic;
+  ^
+brotli/enc/compound_dictionary.c:103:12: note: Assignment 'result=(struct PreparedDictionary*)((alloc_size)>0?((uint8_t*)BrotliAllocate(m,(alloc_size)*sizeof(uint8_t))):NULL)', assigned value is 0
+  result = (PreparedDictionary*)BROTLI_ALLOC(m, uint8_t, alloc_size);
+           ^
+brotli/enc/compound_dictionary.c:113:3: note: Null pointer dereference
+  result->magic = kLeanPreparedDictionaryMagic;
+  ^
+brotli/enc/compound_dictionary.c:114:3: warning: Possible null pointer dereference: result [nullPointer]
+  result->num_items = total_items;
+  ^
+brotli/enc/compound_dictionary.c:103:12: note: Assignment 'result=(struct PreparedDictionary*)((alloc_size)>0?((uint8_t*)BrotliAllocate(m,(alloc_size)*sizeof(uint8_t))):NULL)', assigned value is 0
+  result = (PreparedDictionary*)BROTLI_ALLOC(m, uint8_t, alloc_size);
+           ^
+brotli/enc/compound_dictionary.c:114:3: note: Null pointer dereference
+  result->num_items = total_items;
+  ^
+brotli/enc/compound_dictionary.c:115:3: warning: Possible null pointer dereference: result [nullPointer]
+  result->source_size = (uint32_t)source_size;
+  ^
+brotli/enc/compound_dictionary.c:103:12: note: Assignment 'result=(struct PreparedDictionary*)((alloc_size)>0?((uint8_t*)BrotliAllocate(m,(alloc_size)*sizeof(uint8_t))):NULL)', assigned value is 0
+  result = (PreparedDictionary*)BROTLI_ALLOC(m, uint8_t, alloc_size);
+           ^
+brotli/enc/compound_dictionary.c:115:3: note: Null pointer dereference
+  result->source_size = (uint32_t)source_size;
+  ^
+brotli/enc/compound_dictionary.c:116:3: warning: Possible null pointer dereference: result [nullPointer]
+  result->hash_bits = hash_bits;
+  ^
+brotli/enc/compound_dictionary.c:103:12: note: Assignment 'result=(struct PreparedDictionary*)((alloc_size)>0?((uint8_t*)BrotliAllocate(m,(alloc_size)*sizeof(uint8_t))):NULL)', assigned value is 0
+  result = (PreparedDictionary*)BROTLI_ALLOC(m, uint8_t, alloc_size);
+           ^
+brotli/enc/compound_dictionary.c:116:3: note: Null pointer dereference
+  result->hash_bits = hash_bits;
+  ^
+brotli/enc/compound_dictionary.c:117:3: warning: Possible null pointer dereference: result [nullPointer]
+  result->bucket_bits = bucket_bits;
+  ^
+brotli/enc/compound_dictionary.c:103:12: note: Assignment 'result=(struct PreparedDictionary*)((alloc_size)>0?((uint8_t*)BrotliAllocate(m,(alloc_size)*sizeof(uint8_t))):NULL)', assigned value is 0
+  result = (PreparedDictionary*)BROTLI_ALLOC(m, uint8_t, alloc_size);
+           ^
+brotli/enc/compound_dictionary.c:117:3: note: Null pointer dereference
+  result->bucket_bits = bucket_bits;
+  ^
+brotli/enc/compound_dictionary.c:118:3: warning: Possible null pointer dereference: result [nullPointer]
+  result->slot_bits = slot_bits;
+  ^
+brotli/enc/compound_dictionary.c:103:12: note: Assignment 'result=(struct PreparedDictionary*)((alloc_size)>0?((uint8_t*)BrotliAllocate(m,(alloc_size)*sizeof(uint8_t))):NULL)', assigned value is 0
+  result = (PreparedDictionary*)BROTLI_ALLOC(m, uint8_t, alloc_size);
+           ^
+brotli/enc/compound_dictionary.c:118:3: note: Null pointer dereference
+  result->slot_bits = slot_bits;
+  ^
+26/424 files checked 10% done
+27/424 files checked 10% done
+brotli/enc/compress_fragment_two_pass.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+28/424 files checked 11% done
+29/424 files checked 12% done
+brotli/enc/encode.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+brotli/enc/encode.c:176:10: warning: Possible null pointer dereference: table [nullPointer]
+  memset(table, 0, htsize * sizeof(*table));
+         ^
+brotli/enc/encode.c:169:25: note: Assignment 's->large_table_=(htsize)>0?((int*)BrotliAllocate(m,(htsize)*sizeof(int))):NULL', assigned value is 0
+      s->large_table_ = BROTLI_ALLOC(m, int, htsize);
+                        ^
+brotli/enc/encode.c:172:14: note: Assignment 'table=s->large_table_', assigned value is 0
+    table = s->large_table_;
+             ^
+brotli/enc/encode.c:176:10: note: Null pointer dereference
+  memset(table, 0, htsize * sizeof(*table));
+         ^
+30/424 files checked 13% done
+brotli/enc/encoder_dict.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+31/424 files checked 14% done
+brotli/enc/entropy_encode.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+32/424 files checked 14% done
+33/424 files checked 14% done
+brotli/enc/histogram.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+34/424 files checked 14% done
+brotli/enc/literal_cost.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+35/424 files checked 14% done
+36/424 files checked 14% done
+brotli/enc/metablock.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+37/424 files checked 14% done
+brotli/enc/static_dict.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+38/424 files checked 14% done
+brotli/enc/utf8_util.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+39/424 files checked 15% done
+bzip2/blocksort.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+40/424 files checked 15% done
+bzip2/bzip2.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+41/424 files checked 16% done
+bzip2/bzip2recover.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+42/424 files checked 16% done
+bzip2/bzlib.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+43/424 files checked 16% done
+bzip2/compress.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+bzip2/compress.c:403:14: error: Array 'fave[6]' accessed at index -1, which is out of bounds. [negativeIndex]
+         fave[bt]++;
+             ^
+bzip2/compress.c:399:32: note: Assignment 'bt=-1', assigned value is -1
+         bc = 999999999; bt = -1;
+                               ^
+bzip2/compress.c:400:24: note: Assuming condition is false
+         for (t = 0; t < nGroups; t++)
+                       ^
+bzip2/compress.c:403:14: note: Negative array index
+         fave[bt]++;
+             ^
+44/424 files checked 16% done
+45/424 files checked 17% done
+bzip2/decompress.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+46/424 files checked 17% done
+bzip2/dlltest.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+47/424 files checked 17% done
+bzip2/huffman.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+48/424 files checked 17% done
+49/424 files checked 17% done
+50/424 files checked 17% done
+bzip2/spewG.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+51/424 files checked 17% done
+bzip2/unzcrash.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+52/424 files checked 17% done
+crush/crush.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+53/424 files checked 17% done
+54/424 files checked 17% done
+55/424 files checked 17% done
+density/algorithms/chameleon/core/chameleon_encode.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+56/424 files checked 17% done
+57/424 files checked 18% done
+density/algorithms/cheetah/core/cheetah_encode.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+58/424 files checked 18% done
+59/424 files checked 18% done
+60/424 files checked 18% done
+density/algorithms/lion/core/lion_encode.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+61/424 files checked 18% done
+62/424 files checked 18% done
+63/424 files checked 18% done
+64/424 files checked 18% done
+65/424 files checked 18% done
+fast-lzma2/dict_buffer.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+66/424 files checked 18% done
+67/424 files checked 18% done
+fast-lzma2/fl2_compress.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+68/424 files checked 19% done
+fast-lzma2/fl2_decompress.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+69/424 files checked 19% done
+70/424 files checked 19% done
+71/424 files checked 19% done
+fast-lzma2/lzma2_dec.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+72/424 files checked 20% done
+fast-lzma2/lzma2_enc.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+fast-lzma2/radix_get.h:99:20: error: Uninitialized variable: match.dist [uninitvar]
+            return match;
+                   ^
+fast-lzma2/radix_get.h:120:20: error: Uninitialized variable: match.dist [uninitvar]
+            return match;
+                   ^
+fast-lzma2/radix_get.h:152:20: error: Uninitialized variable: match.dist [uninitvar]
+            return match;
+                   ^
+fast-lzma2/radix_get.h:177:20: error: Uninitialized variable: match.dist [uninitvar]
+            return match;
+                   ^
+73/424 files checked 21% done
+fast-lzma2/radix_bitpack.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+74/424 files checked 21% done
+fast-lzma2/radix_mf.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+fast-lzma2/radix_mf.c:584:77: error: Uninitialized variable: rpt_head_next [uninitvar]
+                            RMF_handleRepeat(tbl->match_buffer, data_block, rpt_head_next, rpt, rpt_dist, rpt_depth, tbl->max_len);
+                                                                            ^
+75/424 files checked 21% done
+fast-lzma2/radix_struct.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+76/424 files checked 21% done
+fast-lzma2/range_enc.c:203:32: error: Signed integer overflow for expression '-((int)(value>>bit_count)&1)'. [integerOverflow]
+        rc->low += rc->range & -((int)(value >> bit_count) & 1);
+                               ^
+77/424 files checked 21% done
+fastlz/fastlz.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+78/424 files checked 21% done
+gipfeli/decompress.cc:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+gipfeli/sinksource.h:122:12: warning: Uninitialized variable: scratch [uninitvar]
+    return scratch;
+           ^
+gipfeli/decompress.cc:384:31: note: Calling function 'GetAppendBuffer', 3rd argument '&c' value is <Uninit>
+      1, uncompressed_length, &c, 1, &output_fragment_size);
+                              ^
+gipfeli/sinksource.h:122:12: note: Uninitialized variable: scratch
+    return scratch;
+           ^
+79/424 files checked 22% done
+gipfeli/entropy.cc:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+80/424 files checked 22% done
+gipfeli/entropy_code_builder.cc:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+81/424 files checked 22% done
+82/424 files checked 22% done
+83/424 files checked 22% done
+84/424 files checked 22% done
+glza/GLZA.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+85/424 files checked 22% done
+86/424 files checked 22% done
+glza/GLZAcompress.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+87/424 files checked 24% done
+glza/GLZAdecode.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+glza/GLZAdecode.c:1287:8: error: Common realloc mistake: 'symbol_strings' nulled but not freed upon failure [memleakOnRealloc]
+  if ((symbol_strings = (uint8_t *)realloc(symbol_strings, dictionary_size)) == 0) {
+       ^
+88/424 files checked 26% done
+glza/GLZAencode.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+89/424 files checked 27% done
+glza/GLZAformat.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+90/424 files checked 28% done
+glza/GLZAmodel.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+91/424 files checked 28% done
+libcsc/csc.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+92/424 files checked 28% done
+libcsc/csc_analyzer.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+93/424 files checked 28% done
+94/424 files checked 28% done
+libcsc/csc_dec.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+libcsc/csc_dec.cpp:84:60: error: Shifting 32-bit value by 4294967285 bits is undefined behaviour [shiftTooManyBits]
+        result = (bc_curval_ >> (bc_curbits_ - len)) & ((1 << len) - 1);
+                                                           ^
+libcsc/csc_dec.cpp:91:9: note: Calling function 'coder_decode_direct', 1st argument '5-16' value is -11
+        DecodeDirect(this, slot, 5);
+        ^
+libcsc/csc_dec.cpp:84:60: note: Shift
+        result = (bc_curval_ >> (bc_curbits_ - len)) & ((1 << len) - 1);
+                                                           ^
+95/424 files checked 29% done
+96/424 files checked 29% done
+libcsc/csc_enc.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+97/424 files checked 29% done
+libcsc/csc_encoder_main.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+98/424 files checked 29% done
+libcsc/csc_filters.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+99/424 files checked 29% done
+libcsc/csc_lz.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+100/424 files checked 29% done
+libcsc/csc_memio.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+101/424 files checked 29% done
+libcsc/csc_mf.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+102/424 files checked 29% done
+libcsc/csc_model.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+103/424 files checked 30% done
+104/424 files checked 30% done
+105/424 files checked 30% done
+106/424 files checked 30% done
+libdeflate/lib/arm/cpu_features.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+107/424 files checked 30% done
+108/424 files checked 30% done
+libdeflate/lib/deflate_compress.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+109/424 files checked 31% done
+libdeflate/lib/deflate_decompress.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+110/424 files checked 32% done
+111/424 files checked 32% done
+libdeflate/lib/gzip_decompress.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+112/424 files checked 32% done
+113/424 files checked 32% done
+libdeflate/lib/x86/cpu_features.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+114/424 files checked 32% done
+115/424 files checked 32% done
+libdeflate/lib/zlib_decompress.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+116/424 files checked 32% done
+117/424 files checked 32% done
+liblzg/decode.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+118/424 files checked 32% done
+liblzg/encode.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+119/424 files checked 33% done
+120/424 files checked 33% done
+libzling/libzling.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+121/424 files checked 33% done
+122/424 files checked 33% done
+libzling/libzling_huffman.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+123/424 files checked 33% done
+libzling/libzling_lz.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+124/424 files checked 33% done
+125/424 files checked 33% done
+lz4/lz4.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+lz4/lz4.c:404:25: error: Uninitialized variable: &val [uninitvar]
+    U16 val; LZ4_memcpy(&val, memPtr, sizeof(val)); return val;
+                        ^
+lz4/lz4.c:409:25: error: Uninitialized variable: &val [uninitvar]
+    U32 val; LZ4_memcpy(&val, memPtr, sizeof(val)); return val;
+                        ^
+lz4/lz4.c:414:27: error: Uninitialized variable: &val [uninitvar]
+    reg_t val; LZ4_memcpy(&val, memPtr, sizeof(val)); return val;
+                          ^
+126/424 files checked 34% done
+lz4/lz4hc.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+127/424 files checked 36% done
+lzf/lzf_c_ultra.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+128/424 files checked 36% done
+lzf/lzf_c_very.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+129/424 files checked 36% done
+lzf/lzf_d.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+130/424 files checked 36% done
+131/424 files checked 36% done
+lzfse/lzfse_decode_base.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+132/424 files checked 36% done
+133/424 files checked 36% done
+lzfse/lzfse_encode_base.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+134/424 files checked 37% done
+135/424 files checked 37% done
+136/424 files checked 37% done
+lzfse/lzvn_decode_base.c:50:37: error: syntax error [syntaxError]
+  static const void *opc_tbl[256] = {
+                                    ^
+137/424 files checked 37% done
+138/424 files checked 37% done
+lzham/lzham_core.h:164:0: error: Syntax error in #elif [preprocessorErrorDirective]
+   #elif
+^
+139/424 files checked 37% done
+140/424 files checked 37% done
+141/424 files checked 37% done
+142/424 files checked 37% done
+143/424 files checked 38% done
+144/424 files checked 38% done
+145/424 files checked 39% done
+146/424 files checked 39% done
+147/424 files checked 40% done
+148/424 files checked 40% done
+149/424 files checked 40% done
+150/424 files checked 40% done
+151/424 files checked 40% done
+152/424 files checked 40% done
+153/424 files checked 41% done
+154/424 files checked 41% done
+155/424 files checked 41% done
+lzjb/lzjb2010.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+156/424 files checked 41% done
+157/424 files checked 41% done
+lzlib/decoder.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+158/424 files checked 41% done
+lzlib/encoder.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+159/424 files checked 42% done
+lzlib/encoder_base.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+160/424 files checked 42% done
+lzlib/fast_encoder.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+161/424 files checked 42% done
+lzlib/lzlib.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+162/424 files checked 42% done
+163/424 files checked 42% done
+lzma/CpuArch.c:165:3: error: Found an exit path from function with non-void return type that has missing return statement [missingReturn]
+  __asm   pushfd
+  ^
+164/424 files checked 42% done
+lzma/LzFind.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+165/424 files checked 43% done
+lzma/LzFindMt.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+166/424 files checked 43% done
+lzma/LzFindOpt.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+167/424 files checked 43% done
+lzma/LzmaDec.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+168/424 files checked 44% done
+lzma/LzmaEnc.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+169/424 files checked 45% done
+170/424 files checked 45% done
+lzmat/lzmat_dec.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+171/424 files checked 45% done
+lzmat/lzmat_enc.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+172/424 files checked 45% done
+lzo/lzo_conf.h:69:4: error: #error "version mismatch" [preprocessorErrorDirective]
+#  error "version mismatch"
+   ^
+173/424 files checked 45% done
+174/424 files checked 45% done
+175/424 files checked 46% done
+176/424 files checked 46% done
+177/424 files checked 46% done
+178/424 files checked 46% done
+179/424 files checked 46% done
+180/424 files checked 46% done
+181/424 files checked 46% done
+182/424 files checked 46% done
+183/424 files checked 46% done
+184/424 files checked 46% done
+185/424 files checked 46% done
+186/424 files checked 46% done
+187/424 files checked 46% done
+188/424 files checked 46% done
+189/424 files checked 46% done
+190/424 files checked 46% done
+191/424 files checked 46% done
+192/424 files checked 46% done
+193/424 files checked 46% done
+194/424 files checked 46% done
+195/424 files checked 46% done
+196/424 files checked 46% done
+197/424 files checked 46% done
+198/424 files checked 46% done
+199/424 files checked 46% done
+200/424 files checked 46% done
+201/424 files checked 46% done
+202/424 files checked 46% done
+203/424 files checked 46% done
+204/424 files checked 46% done
+205/424 files checked 46% done
+206/424 files checked 46% done
+207/424 files checked 46% done
+208/424 files checked 46% done
+209/424 files checked 47% done
+210/424 files checked 47% done
+211/424 files checked 47% done
+212/424 files checked 47% done
+213/424 files checked 47% done
+214/424 files checked 47% done
+215/424 files checked 47% done
+216/424 files checked 47% done
+217/424 files checked 47% done
+218/424 files checked 47% done
+219/424 files checked 47% done
+220/424 files checked 47% done
+221/424 files checked 47% done
+222/424 files checked 47% done
+223/424 files checked 47% done
+224/424 files checked 47% done
+225/424 files checked 47% done
+226/424 files checked 47% done
+227/424 files checked 47% done
+228/424 files checked 47% done
+229/424 files checked 47% done
+230/424 files checked 47% done
+231/424 files checked 47% done
+232/424 files checked 47% done
+233/424 files checked 47% done
+234/424 files checked 47% done
+235/424 files checked 47% done
+236/424 files checked 48% done
+237/424 files checked 48% done
+238/424 files checked 48% done
+239/424 files checked 48% done
+240/424 files checked 48% done
+241/424 files checked 48% done
+lzrw/lzrw2.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+242/424 files checked 48% done
+lzrw/lzrw3-a.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+243/424 files checked 49% done
+lzrw/lzrw3.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+244/424 files checked 49% done
+lzsse/lzsse2/lzsse2.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+lzsse/lzsse2/lzsse2.cpp:806:17: error: Uninitialized variable: inputEarlyEnd [legacyUninitvar]
+                DECODE_STEP_LO( true, false );
+                ^
+lzsse/lzsse2/lzsse2.cpp:806:17: error: Uninitialized variable: outputEarlyEnd [legacyUninitvar]
+                DECODE_STEP_LO( true, false );
+                ^
+245/424 files checked 50% done
+lzsse/lzsse4/lzsse4.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+lzsse/lzsse4/lzsse4.cpp:1220:17: error: Uninitialized variable: inputEarlyEnd [legacyUninitvar]
+                DECODE_STEP_LO( true, false );
+                ^
+lzsse/lzsse4/lzsse4.cpp:1220:17: error: Uninitialized variable: outputEarlyEnd [legacyUninitvar]
+                DECODE_STEP_LO( true, false );
+                ^
+246/424 files checked 51% done
+lzsse/lzsse8/lzsse8.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+lzsse/lzsse8/lzsse8.cpp:1239:17: error: Uninitialized variable: inputEarlyEnd [legacyUninitvar]
+                DECODE_STEP_LO( true, false );
+                ^
+lzsse/lzsse8/lzsse8.cpp:1239:17: error: Uninitialized variable: outputEarlyEnd [legacyUninitvar]
+                DECODE_STEP_LO( true, false );
+                ^
+247/424 files checked 52% done
+nakamichi/Nakamichi_Okamigan.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+nakamichi/Nakamichi_Okamigan.c:2289:89: error: Unmatched ')'. Configuration: '_N_GP'. [syntaxError]
+    memcpy(retLOCAL, (const char *)( (uint64_t)(retLOCAL-((DWORDtrio&0xFFFF)>>8))) ), 32); // No need of DWORDtrio&0xFFFFFFFF
+                                                                                        ^
+248/424 files checked 56% done
+249/424 files checked 56% done
+250/424 files checked 56% done
+nvcomp/CascadedSelector.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+251/424 files checked 56% done
+252/424 files checked 56% done
+253/424 files checked 56% done
+254/424 files checked 57% done
+255/424 files checked 57% done
+256/424 files checked 57% done
+257/424 files checked 57% done
+258/424 files checked 57% done
+259/424 files checked 57% done
+260/424 files checked 57% done
+pithy/pithy.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+261/424 files checked 57% done
+quicklz/quicklz1.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+262/424 files checked 57% done
+quicklz/quicklz151b7.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+263/424 files checked 58% done
+quicklz/quicklz2.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+264/424 files checked 58% done
+quicklz/quicklz3.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+265/424 files checked 58% done
+shrinker/shrinker.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+266/424 files checked 58% done
+slz/slz.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+267/424 files checked 59% done
+268/424 files checked 59% done
+269/424 files checked 59% done
+270/424 files checked 59% done
+snappy/snappy.cc:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+271/424 files checked 60% done
+tornado/Common.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+tornado/Common.cpp:453:5: error: Return value of allocation function 'realloc' is not stored. [leakReturnValNotUsed]
+    realloc (TempDir, (_tcslen(TempDir)+1) * sizeof(*TempDir));
+    ^
+272/424 files checked 60% done
+tornado/DataTables.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+273/424 files checked 60% done
+tornado/EntropyCoder.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+tornado/EntropyCoder.cpp:428:13: error: Common realloc mistake: 'index' nulled but not freed upon failure [memleakOnRealloc]
+            index = (uint16*) realloc (index, (1<<maxbits)*sizeof(*index));
+            ^
+274/424 files checked 61% done
+tornado/LZ77_Coder.cpp:367:5: error: There is an unknown macro here somewhere. Configuration is required. If iterate_var is a macro then please configure it. [unknownMacro]
+    iterate_var(i,8)   printf (" %d", lencnt[i]/1000);
+    ^
+275/424 files checked 61% done
+tornado/MatchFinder.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+276/424 files checked 62% done
+tornado/OptimalParsing.cpp:243:32: error: There is an unknown macro here somewhere. Configuration is required. If iterate_var is a macro then please configure it. [unknownMacro]
+    if(coder.support_tables)  {iterate_var(i,MAX_TABLE_ROW)  iterate_var(j,MAX_TABLE_ROW)  last_checked[i][j] = buf;}
+                               ^
+277/424 files checked 62% done
+tornado/Tornado.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+tornado/LZ77_Coder.cpp:503:42: warning: Uninitialized variable: dbase [uninitvar]
+        Coder::putlowerbits (dbits, dist-dbase);
+                                         ^
+tornado/LZ77_Coder.cpp:468:45: note: Assuming condition is true
+             if (x=prevdist0, prevdist0=dist, dist==x)   dcode=0, dbits=0;
+                                            ^
+tornado/LZ77_Coder.cpp:503:42: note: Uninitialized variable: dbase
+        Coder::putlowerbits (dbits, dist-dbase);
+                                         ^

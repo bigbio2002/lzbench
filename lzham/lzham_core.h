@@ -161,7 +161,7 @@
       #endif
 
       #define LZHAM_NOTE_UNUSED(x) (void)x
-   #elif
+   #else
       #error TODO: Unknown Apple target
    #endif
 

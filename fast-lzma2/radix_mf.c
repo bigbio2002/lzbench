@@ -547,7 +547,7 @@ void RMF_recurseListChunk_generic(RMF_builder* const tbl,
         }
         else if (test) {
             S32 rpt = -1;
-            size_t rpt_head_next;
+            size_t rpt_head_next = 0;
             U32 rpt_dist = 0;
             size_t const prev_st_index = st_index;
             U32 const rpt_depth = depth - 1;

@@ -42,7 +42,7 @@ typedef uint64_t u64;
 
 int shrinker_compress(void *in, void *out, int size)
 {
-    u32 ht[(1<<HASH_BITS)];
+    u32 ht[(1<<HASH_BITS)] = { 0 };
     u8 *src = (u8*)in, *dst = (u8*)out;
     u8 *src_end = src + size - MINMATCH - 8;
     u8 *dst_end = dst + size - MINMATCH - 8;
