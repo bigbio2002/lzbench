@@ -17,6 +17,9 @@
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
+#ifndef _LZLIB_LZLIB_H_
+#define _LZLIB_LZLIB_H_
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -107,4 +110,6 @@ unsigned long long LZ_decompress_total_out_size( struct LZ_Decoder * const decod
 
 #ifdef __cplusplus
 }
+#endif
+
 #endif

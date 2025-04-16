@@ -12,6 +12,10 @@
    trailer decoding by inflate().  NO_GZIP would be used to avoid linking in
    the crc code when it is not needed.  For shared libraries, gzip decoding
    should be left enabled. */
+
+#ifndef _ZLIB_INFLATE_H_
+#define _ZLIB_INFLATE_H_
+
 #ifndef NO_GZIP
 #  define GUNZIP
 #endif
@@ -124,3 +128,5 @@ struct inflate_state {
     int back;                   /* bits back of last unprocessed length/lit */
     unsigned was;               /* initial length of match */
 };
+
+#endif

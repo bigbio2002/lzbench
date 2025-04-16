@@ -88,6 +88,9 @@
  * ----------------------------------------------------------------------------
  */
 
+#ifndef _XPACK_HC_MATCHFINDER_H_
+#define _XPACK_HC_MATCHFINDER_H_
+
 #include <string.h>
 
 #include "lz_extend.h"
@@ -363,3 +366,5 @@ hc_matchfinder_skip_positions(struct hc_matchfinder * const restrict mf,
 
 	return stop_ptr;
 }
+
+#endif

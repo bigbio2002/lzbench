@@ -1,3 +1,6 @@
+#ifndef _NAKAMICHI_H_
+#define _NAKAMICHI_H_
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -6,4 +9,6 @@ uint64_t NakaCompress(char* ret, char* src, unsigned int srcSize);
 uint64_t NakaDecompress (char* ret, char* src, uint64_t srcSize);
 #ifdef __cplusplus
 }
+#endif
+
 #endif

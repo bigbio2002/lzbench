@@ -2,6 +2,9 @@
  * Generated automatically by crc32.c
  */
 
+#ifndef _ZLIB_CRC32_H_
+#define _ZLIB_CRC32_H_
+
 local const z_crc_t FAR crc_table[] = {
     0x00000000, 0x77073096, 0xee0e612c, 0x990951ba, 0x076dc419,
     0x706af48f, 0xe963a535, 0x9e6495a3, 0x0edb8832, 0x79dcb8a4,
@@ -9444,3 +9447,5 @@ local const z_crc_t FAR x2n_table[] = {
     0x9fec022a, 0x6c8dedc4, 0x15d6874d, 0x5fde7a4e, 0xbad90e37,
     0x2e4e5eef, 0x4eaba214, 0xa8a472c0, 0x429a969e, 0x148d302a,
     0xc40ba6d0, 0xc4e22c3c};
+
+#endif

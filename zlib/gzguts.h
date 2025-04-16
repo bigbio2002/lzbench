@@ -3,6 +3,9 @@
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
 
+#ifndef _ZLIB_GZGUTS_H_
+#define _ZLIB_GZGUTS_H_
+
 #ifdef _LARGEFILE64_SOURCE
 #  ifndef _LARGEFILE_SOURCE
 #    define _LARGEFILE_SOURCE 1
@@ -213,3 +216,4 @@ char ZLIB_INTERNAL *gz_strwinerror(DWORD error);
    (possible z_off64_t types off_t, off64_t, and long are all signed) */
 unsigned ZLIB_INTERNAL gz_intmax(void);
 #define GT_OFF(x) (sizeof(int) == sizeof(z_off64_t) && (x) > gz_intmax())
+#endif

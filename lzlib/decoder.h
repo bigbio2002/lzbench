@@ -17,6 +17,9 @@
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
+#ifndef _LZLIB_DECODER_H_
+#define _LZLIB_DECODER_H_
+
 enum { rd_min_available_bytes = 10 };
 
 struct Range_decoder
@@ -461,3 +464,5 @@ static inline unsigned LZd_crc( const struct LZ_decoder * const d )
 static inline unsigned long long
 LZd_data_position( const struct LZ_decoder * const d )
   { return d->partial_data_pos + d->cb.put; }
+
+#endif

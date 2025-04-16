@@ -1,7 +1,7 @@
-#include "mem.h"
-
 #ifndef FL2_DATA_BLOCK_H_
 #define FL2_DATA_BLOCK_H_
+
+#include "mem.h"
 
 #if defined (__cplusplus)
 extern "C" {

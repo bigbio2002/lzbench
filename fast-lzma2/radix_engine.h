@@ -8,6 +8,9 @@
 * You may select, at your option, one of the above-listed licenses.
 */
 
+#ifndef _RADIX_ENGINE_H_
+#define _RADIX_ENGINE_H_
+
 #include <stdio.h>  
 
 #define MAX_READ_BEYOND_DEPTH 2
@@ -1016,3 +1019,5 @@ RMF_structuredIntegrityCheck
     }
     return err;
 }
+
+#endif

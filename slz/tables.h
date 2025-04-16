@@ -1,3 +1,6 @@
+#ifndef _SLZ_TABLES_H_
+#define _SLZ_TABLES_H_
+
 /* Fixed Huffman table as per RFC1951.
  *
  *       Lit Value    Bits        Codes
@@ -4623,3 +4626,4 @@ static inline void __slz_prepare_dist_table()
 	}
 #endif
 }
+#endif

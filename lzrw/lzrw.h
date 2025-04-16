@@ -120,6 +120,9 @@
 /******************************************************************************/
 
 
+#ifndef _LZRW_H_
+#define _LZRW_H_
+
 #ifndef DONE_PORT       /* Only do this if not previously done.                   */
 
    #ifdef THINK_C
@@ -257,3 +260,5 @@ void fast_copy(void *src_adr, void *dst_adr, unsigned long src_len);
 /* PRE  : Source and destination blocks must not overlap.                     */
 /* POST : MEM[dst_adr,dst_adr+src_len-1]=MEM[src_adr,src_adr+src_len-1].      */
 /* POST : MEM[dst_adr,dst_adr+src_len-1] is the only memory changed.          */
+
+#endif

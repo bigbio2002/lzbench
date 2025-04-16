@@ -1,3 +1,5 @@
+#ifndef _GLZAMODEL_H_
+#define _GLZAMODEL_H_
 enum { TOP = 1 << 24, BUF_SIZE = 0x40000 };
 enum { UP_FREQ_SYM_TYPE = 1, FREQ_SYM_TYPE_BOT = 0x4000 };
 enum { UP_FREQ_MTF_QUEUE_NUM2 = 4, UP_FREQ_MTF_QUEUE_NUM = 10, FREQ_MTF_QUEUE_NUM_BOT = 0x100 };
@@ -92,3 +94,4 @@ uint8_t DecodeFirstChar(uint8_t SymType, uint8_t LastChar);
 uint8_t DecodeFirstCharBinary(uint8_t LastChar);
 void InitDecoder(uint8_t max_regular_code_length, uint8_t num_inst_codes, uint8_t cap_encoded, uint8_t UTF8_compliant,
     uint8_t use_mtf, uint8_t use_mtfg, uint8_t * inbuf);
+#endif

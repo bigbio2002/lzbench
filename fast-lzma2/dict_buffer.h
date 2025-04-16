@@ -8,15 +8,15 @@
 * You may select, at your option, one of the above-listed licenses.
 */
 
+#ifndef FL2_DICT_BUFFER_H_
+#define FL2_DICT_BUFFER_H_
+
 #include "fast-lzma2.h"
 #include "mem.h"
 #include "data_block.h"
 #ifndef NO_XXHASH
 #  include "xxhash.h"
 #endif
-
-#ifndef FL2_DICT_BUFFER_H_
-#define FL2_DICT_BUFFER_H_
 
 #if defined (__cplusplus)
 extern "C" {

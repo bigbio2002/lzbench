@@ -3,6 +3,9 @@
  * handles clang and the Intel C Compiler.
  */
 
+#ifndef _XPACK_COMPILER_GCC_H_
+#define _XPACK_COMPILER_GCC_H_
+
 #define GCC_PREREQ(major, minor)					\
 	(!defined(__clang__) && !defined(__INTEL_COMPILER) &&		\
 	 (__GNUC__ > (major) ||						\
@@ -83,3 +86,5 @@ store_##type##_unaligned(type v, void *p)			\
 #define bsr64(n)	(63 - __builtin_clzll(n))
 #define bsf32(n)	__builtin_ctz(n)
 #define bsf64(n)	__builtin_ctzll(n)
+
+#endif

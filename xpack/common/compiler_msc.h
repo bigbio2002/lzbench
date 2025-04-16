@@ -2,6 +2,9 @@
  * compiler_msc.h - definitions for the Microsoft C Compiler
  */
 
+#ifndef _XPACK_COMPILER_MSC_H_
+#define _XPACK_COMPILER_MSC_H_
+
 #define BUILDING_LIBXPACK
 
 #define LIBEXPORT	__declspec(dllexport)
@@ -95,3 +98,5 @@ bsf64(uint64_t n)
 #define bsf64 bsf64
 
 #endif /* _M_X64 */
+
+#endif

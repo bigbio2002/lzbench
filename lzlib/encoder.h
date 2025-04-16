@@ -17,6 +17,9 @@
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
+#ifndef _LZLIB_ENCODER_H_
+#define _LZLIB_ENCODER_H_
+
 struct Len_prices
   {
   const struct Len_model * lm;
@@ -324,3 +327,5 @@ static inline void LZe_reset( struct LZ_encoder * const e,
   e->align_price_counter = 0;
   e->been_flushed = false;
   }
+
+#endif

@@ -17,6 +17,9 @@
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
+#ifndef _LZLIB_FAST_ENCODER_H_
+#define _LZLIB_FAST_ENCODER_H_
+
 struct FLZ_encoder
   {
   struct LZ_encoder_base eb;
@@ -68,3 +71,5 @@ static inline bool FLZe_init( struct FLZ_encoder * const fe,
 static inline void FLZe_reset( struct FLZ_encoder * const fe,
                                const unsigned long long member_size )
   { LZeb_reset( &fe->eb, member_size ); }
+
+#endif

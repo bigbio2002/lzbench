@@ -410,5 +410,5 @@ LZ4LIB_STATIC_API int LZ4_compress_HC_extStateHC_fastReset (
 }
 #endif
 
-#endif   /* LZ4_HC_SLO_098092834 */
 #endif   /* LZ4_HC_STATIC_LINKING_ONLY */
+#endif   /* LZ4_HC_SLO_098092834 */

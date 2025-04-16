@@ -30,6 +30,9 @@
  * that it can be compiled with different target instruction sets.
  */
 
+#ifndef _XPACK_DECOMPRESS_IMPL_H_
+#define _XPACK_DECOMPRESS_IMPL_H_
+
 static enum decompress_result ATTRIBUTES
 FUNCNAME(struct xpack_decompressor * restrict d,
 	 const void * restrict in, size_t in_nbytes,
@@ -520,3 +523,5 @@ next_block:
 	}
 	return DECOMPRESS_SUCCESS;
 }
+
+#endif

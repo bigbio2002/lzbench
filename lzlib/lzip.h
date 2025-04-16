@@ -17,6 +17,9 @@
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
+#ifndef _LZLIB_LZIP_H_
+#define _LZLIB_LZIP_H_
+
 #ifndef max
   #define max(x,y) ((x) >= (y) ? (x) : (y))
 #endif
@@ -292,3 +295,5 @@ static inline unsigned long long Lt_get_member_size( const Lzip_trailer data )
 
 static inline void Lt_set_member_size( Lzip_trailer data, unsigned long long sz )
   { int i; for( i = 12; i <= 19; ++i ) { data[i] = (uint8_t)sz; sz >>= 8; } }
+
+#endif

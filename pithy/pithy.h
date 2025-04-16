@@ -36,15 +36,15 @@
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#ifndef _PITHY_H_
+#define _PITHY_H_
+
 #include <stdint.h>
 #include <stddef.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#ifndef _PITHY_H_
-#define _PITHY_H_
 
   // compressionLevel >= 0 && compressionLevel <= 9.  Values out side this range will be clamped to this range.
 size_t pithy_Compress  (const char *uncompressed, size_t uncompressedLength, char *compressedOut,   size_t compressedOutLength, int compressionLevel);
@@ -53,8 +53,8 @@ int    pithy_Decompress(const char *compressed,   size_t compressedLength,   cha
 size_t pithy_MaxCompressedLength(size_t inputLength);
 int    pithy_GetDecompressedLength(const char *compressed, size_t compressedLength, size_t *decompressedOutLengthResult);
 
-#endif // _PITHY_H_
-
 #ifdef __cplusplus
 } // extern "C"
 #endif
+
+#endif // _PITHY_H_

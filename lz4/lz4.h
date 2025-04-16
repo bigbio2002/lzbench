@@ -32,12 +32,12 @@
     - LZ4 homepage : http://www.lz4.org
     - LZ4 source repository : https://github.com/lz4/lz4
 */
+#ifndef LZ4_H_2983827168210
+#define LZ4_H_2983827168210
+
 #if defined (__cplusplus)
 extern "C" {
 #endif
-
-#ifndef LZ4_H_2983827168210
-#define LZ4_H_2983827168210
 
 /* --- Dependency --- */
 #include <stddef.h>   /* size_t */
@@ -876,9 +876,8 @@ LZ4LIB_API int LZ4_decompress_fast_usingDict (const char* src, char* dst, int or
 LZ4LIB_API void LZ4_resetStream (LZ4_stream_t* streamPtr);
 
 
-#endif /* LZ4_H_98237428734687 */
-
-
 #if defined (__cplusplus)
 }
 #endif
+
+#endif /* LZ4_H_98237428734687 */

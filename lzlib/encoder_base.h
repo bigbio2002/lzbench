@@ -17,6 +17,9 @@
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
+#ifndef _LZLIB_ENCODER_BASE_H_
+#define _LZLIB_ENCODER_BASE_H_
+
 enum { price_shift_bits = 6,
        price_step_bits = 2 };
 
@@ -607,3 +610,5 @@ static inline void LZeb_encode_pair( struct LZ_encoder_base * const eb,
       }
     }
   }
+
+#endif
