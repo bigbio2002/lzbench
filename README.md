@@ -95,7 +95,7 @@ see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page
  - [lizard v1.0 (formerly lz5)](https://github.com/inikep/lizard)
  - [lz4/lz4hc v1.10.0](https://github.com/lz4/lz4)
  - [lzf 3.6](https://software.schmorp.de/pkg/liblzf.html)
- - [lzfse/lzvn 1.0](https://github.com/lzfse/lzfse)
+ - [lzfse 2017-03-08/lzvn 1.0](https://github.com/lzfse/lzfse)
  - [lzg 1.0.10](https://liblzg.bitsnbites.eu)
  - [lzham 1.0](https://github.com/richgel999/lzham_codec)
  lzjb 2010
@@ -128,7 +128,7 @@ CUDA support
 
 If CUDA is available, lzbench supports additional compressors:
   - [cudaMemcpy](https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__MEMORY.html#group__CUDART__MEMORY_1gc263dbe6574220cc776b45438fc351e8) - similar to the reference `memcpy` benchmark, using GPU memory
-  - [nvcomp 1.2.2](https://github.com/NVIDIA/nvcomp) LZ4 GPU-only compressor
+  - [nvcomp 1.2.3](https://github.com/NVIDIA/nvcomp) LZ4 GPU-only compressor
 
 The directory where the CUDA compiler and libraries are available can be passed to `make` via the `CUDA_BASE` variable, *e.g.*:
 ```
