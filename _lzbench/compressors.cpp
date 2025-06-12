@@ -595,6 +595,7 @@ int64_t lzbench_lzlib_decompress(char *inbuf, size_t insize, char *outbuf, size_
 
 #include <string.h>
 #include "lzma/7zAlloc.h"
+#include "lzma/Alloc.h"
 #include "lzma/LzmaDec.h"
 #include "lzma/LzmaEnc.h"
 
