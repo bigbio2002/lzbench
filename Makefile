@@ -236,7 +236,7 @@ else
 	LZHAM_FILES = lzham/lzham_assert.o lzham/lzham_checksum.o lzham/lzham_huffman_codes.o lzham/lzham_lib.o
 	LZHAM_FILES += lzham/lzham_lzbase.o lzham/lzham_lzcomp.o lzham/lzham_lzcomp_internal.o lzham/lzham_lzcomp_state.o
 	LZHAM_FILES += lzham/lzham_lzdecomp.o lzham/lzham_lzdecompbase.o lzham/lzham_match_accel.o lzham/lzham_mem.o
-	LZHAM_FILES += lzham/lzham_platform.o lzham/lzham_prefix_coding.o lzham/lzham_symbol_codec.o lzham/lzham_timer.o lzham/lzham_vector.o
+	LZHAM_FILES += lzham/lzham_platform.o lzham/lzham_prefix_coding.o lzham/lzham_pthreads_threading.o lzham/lzham_symbol_codec.o lzham/lzham_timer.o lzham/lzham_vector.o
 endif
 
 #DONT_BUILD_LZJB = 1
@@ -297,7 +297,7 @@ else
     LZSSE_FILES = lzsse/lzsse2/lzsse2.o lzsse/lzsse4/lzsse4.o lzsse/lzsse8/lzsse8.o
 endif
 
-DONT_BUILD_PITHY = 1
+#DONT_BUILD_PITHY = 1
 ifeq "$(DONT_BUILD_PITHY)" "1"
 	DEFINES += -DBENCH_REMOVE_PITHY
 else
@@ -332,7 +332,7 @@ else
 	SNAPPY_FILES = snappy/snappy.o snappy/snappy-sinksource.o snappy/snappy-stubs-internal.o
 endif
 
-DONT_BUILD_TORNADO = 1
+#DONT_BUILD_TORNADO = 1
 ifeq "$(DONT_BUILD_TORNADO)" "1"
     DEFINES += -DBENCH_REMOVE_TORNADO
     LZMA_FILES += lzma/Alloc.o

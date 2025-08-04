@@ -97,7 +97,7 @@ see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page
  - [lzf 3.6](https://software.schmorp.de/pkg/liblzf.html)
  - [lzfse 2017-03-08/lzvn 1.0](https://github.com/lzfse/lzfse)
  - [lzg 1.0.10](https://liblzg.bitsnbites.eu)
- - [lzham 1.0](https://github.com/richgel999/lzham_codec)
+ - [lzham 1.0-stable](https://github.com/richgel999/lzham_codec)
  lzjb 2010
  - [lzlib 1.14](https://www.nongnu.org/lzip)
  - [lzma v24.09](https://7-zip.org)
@@ -114,7 +114,7 @@ see the [CompFuzz Results](https://github.com/nemequ/compfuzz/wiki/Results) page
  - [ucl 1.03](https://www.oberhumer.com/opensource/ucl)
  - [wflz 2015-09-16](https://github.com/ShaneWF/wflz) - WARNING: it can throw SEGFAULT compiled with gcc 4.9+ -O3
  - [xpack 2016-06-02](https://github.com/ebiggers/xpack)
- - [xz 5.2.13](https://tukaani.org/xz/)
+ - [xz 5.2.13](https://tukaani.org/xz)
  - [yalz77 2015-09-19](https://github.com/ivan-tkatchev/yalz77)
  - [yappy 2014-03-22](https://encode.su/threads/2825-Yappy-(working)-compressor) - WARNING: fails to decompress properly on ARM
  - [zlib 1.3.1](https://www.zlib.net)
@@ -139,7 +139,7 @@ Benchmarks
 -------------------------
 
 The following results are obtained with `lzbench 1.8` with the `-t16,16 -eall` options using 1 core of Intel Core i7-8700K, Ubuntu 18.04.3 64-bit, and clang 9.0.1
-with "silesia.tar" which contains tarred files from [Silesia compression corpus](http://sun.aei.polsl.pl/~sdeor/index.php?page=silesia).
+with "silesia.tar" which contains tarred files from [Silesia compression corpus](https://sun.aei.polsl.pl/~sdeor/index.php?page=silesia).
 The results sorted by ratio are available [here](lzbench18_sorted.md).
 
 | Compressor name         | Compress.  |Decompress. | Compr. size | Ratio |
