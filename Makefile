@@ -112,11 +112,11 @@ ifeq "$(DONT_BUILD_BROTLI)" "1"
 	DEFINES += -DBENCH_REMOVE_BROTLI
 else
 	BROTLI_FILES = brotli/common/constants.o brotli/common/context.o brotli/common/dictionary.o brotli/common/platform.o brotli/common/shared_dictionary.o brotli/common/transform.o
-	BROTLI_FILES += brotli/dec/bit_reader.o brotli/dec/decode.o brotli/dec/huffman.o brotli/dec/state.o
+	BROTLI_FILES += brotli/dec/bit_reader.o brotli/dec/decode.o brotli/dec/huffman.o brotli/dec/prefix.c brotli/dec/state.o brotli/dec/static_init.o
 	BROTLI_FILES += brotli/enc/backward_references.o brotli/enc/backward_references_hq.o brotli/enc/bit_cost.o brotli/enc/block_splitter.o brotli/enc/brotli_bit_stream.o
 	BROTLI_FILES += brotli/enc/cluster.o brotli/enc/command.o brotli/enc/compound_dictionary.o brotli/enc/compress_fragment.o brotli/enc/compress_fragment_two_pass.o
 	BROTLI_FILES += brotli/enc/dictionary_hash.o brotli/enc/encode.o brotli/enc/encoder_dict.o brotli/enc/entropy_encode.o brotli/enc/fast_log.o
-	BROTLI_FILES += brotli/enc/histogram.o brotli/enc/literal_cost.o brotli/enc/memory.o brotli/enc/metablock.o brotli/enc/static_dict.o brotli/enc/utf8_util.o
+	BROTLI_FILES += brotli/enc/histogram.o brotli/enc/literal_cost.o brotli/enc/memory.o brotli/enc/metablock.o brotli/enc/static_dict.o brotli/enc/static_dict_lut.o brotli/enc/static_init.o brotli/enc/utf8_util.o
 endif
 
 #DONT_BUILD_BZIP2 = 1
