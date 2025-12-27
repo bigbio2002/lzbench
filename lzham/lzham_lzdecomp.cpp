@@ -423,7 +423,7 @@ namespace lzham
       do
       {
 #ifdef LZHAM_LZDEBUG
-         uint outer_sync_marker; LZHAM_SYMBOL_CODEC_DECODE_GET_BITS(codec, k, 12);
+         uint outer_sync_marker = 0; LZHAM_SYMBOL_CODEC_DECODE_GET_BITS(codec, k, 12);
          LZHAM_VERIFY(outer_sync_marker == 166);
 #endif
          
@@ -664,7 +664,7 @@ namespace lzham
 #endif
             {
 #ifdef LZHAM_LZDEBUG
-               uint sync_marker; LZHAM_SYMBOL_CODEC_DECODE_GET_BITS(codec, x, CLZDecompBase::cLZHAMDebugSyncMarkerBits);
+               uint sync_marker = 0; LZHAM_SYMBOL_CODEC_DECODE_GET_BITS(codec, x, CLZDecompBase::cLZHAMDebugSyncMarkerBits);
                LZHAM_VERIFY(sync_marker == CLZDecompBase::cLZHAMDebugSyncMarkerValue);
 
                LZHAM_SYMBOL_CODEC_DECODE_GET_BITS(codec, m_debug_is_match, 1);

@@ -2307,7 +2307,7 @@ uint64_t NakaDecompress (char* ret, char* src, uint64_t srcSize) {
 			}
 		} else {
 			#ifdef _N_GP
-				memcpy(retLOCAL, (const char *)( (uint64_t)(retLOCAL-(DWORDtrio>>8))) ), 16); // No need of DWORDtrio&0xFFFFFFFF
+				memcpy(retLOCAL, (const char *)( (uint64_t)(retLOCAL-(DWORDtrio>>8)) ), 16); // No need of DWORDtrio&0xFFFFFFFF
 			#endif
 			#ifdef _N_XMM
 				NotSoSlowCopy128bit( (const char *)( (uint64_t)(retLOCAL-(DWORDtrio>>8))+16*(0) ), retLOCAL +16*(0));

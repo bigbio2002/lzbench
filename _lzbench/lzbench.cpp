@@ -993,7 +993,7 @@ int main( int argc, char** argv)
         case 5: std::sort(params->results.begin(), params->results.end(), less_using_5th_column()); break;
     }
 
-    for (std::vector<string_table_t>::iterator it = params->results.begin(); it!=params->results.end(); it++)
+    for (std::vector<string_table_t>::iterator it = params->results.begin(); it!=params->results.end(); ++it)
     {
         if (params->show_speed)
             print_speed(params, *it);

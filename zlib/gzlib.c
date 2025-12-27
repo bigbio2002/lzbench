@@ -29,7 +29,7 @@
 char ZLIB_INTERNAL *gz_strwinerror(DWORD error) {
     static char buf[1024];
 
-    wchar_t *msgbuf;
+    wchar_t *msgbuf = 0;
     DWORD lasterr = GetLastError();
     DWORD chars = FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM
         | FORMAT_MESSAGE_ALLOCATE_BUFFER,
